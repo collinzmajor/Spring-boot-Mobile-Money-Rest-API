@@ -34,7 +34,7 @@ public class ApplicationExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler({ObjectAlreadyExistsException.class, InsufficientBalanceException.class, LimitExceededException.class, InvalidTransactionException.class})
-    public Map<String, String> handCustomBadRequestExceptions(ObjectAlreadyExistsException ex){
+    public Map<String, String> handCustomBadRequestExceptions(Exception ex){
         Map<String, String> errorMap = new HashMap<>();
         errorMap.put("errorMessage", ex.getMessage());
 
